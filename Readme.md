@@ -24,6 +24,7 @@ f:/Achiredo/
 │       ├── package.json     # Dependencies (express, socket.io, cors)
 │       ├── package-lock.json
 │       └── .gitignore
+|
 ├── Task/                    # Task Manager App
 │   ├── index.html          # Frontend UI
 │   ├── .env                # DB credentials
