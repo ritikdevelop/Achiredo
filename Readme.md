@@ -9,35 +9,7 @@ A repository containing two production-ready web applications:
 1. **Workshop Digital Twin** - Real-time voltage drop monitoring dashboard for manufacturing lines
 2. **Task Manager** - Full-stack CRUD task management application
 
-## 📁 Project Structure
 
-\`\`\`
-f:/Achiredo/
-├── README.md                 # This file
-├── Live-Mockup/              # Workshop Digital Twin Dashboard
-│   ├── index.html           # Frontend dashboard
-│   ├── script.js            # Real-time data rendering + Socket.io
-│   ├── style.css            # Responsive styling
-│   └── backend/             # Node.js API + Real-time server
-│       ├── server.js        # Express + Socket.io server
-│       ├── dataGenerator.js # Simulated workshop voltage data
-│       ├── package.json     # Dependencies (express, socket.io, cors)
-│       ├── package-lock.json
-│       └── .gitignore
-|
-├── Task/                    # Task Manager App
-│   ├── index.html          # Frontend UI
-│   ├── .env                # DB credentials
-│   ├── setup.sql           # MySQL schema
-│   ├── api/                # PHP REST API
-│   │   ├── db.php          # PDO database connection
-│   │   ├── config.php      # DB config
-│   │   └── tasks.php       # CRUD endpoints (GET/POST)
-│   └── assets/             # Frontend assets
-│       ├── script.js       # AJAX API calls
-│       └── style.css       # Modern UI
-└── .vscode/settings.json   # Workspace settings
-\`\`\`
 
 ## 🚀 Quick Start
 
