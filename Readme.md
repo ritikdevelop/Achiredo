@@ -1,1 +1,157 @@
-# Achiredo Projects\n\nA portfolio of two full-stack web applications showcasing different technology stacks for real-world use cases.\n\n## 📋 Table of Contents\n- [Workshop Digital Twin Dashboard](#-workshop-digital-twin-dashboard)\n- [Task Manager](#-task-manager)\n- [Prerequisites](#prerequisites)\n- [Directory Structure](#directory-structure)\n\n## 📊 Workshop Digital Twin Dashboard\n\n**Live-Mockup/** - Real-time voltage drop monitoring dashboard for workshop production lines.\n\n### ✨ Features\n- Visualizes voltage drops across lines (LINE-1 to LINE-4), rooms, and workstation stations\n- Real-time updates via Socket.io (with polling fallback)\n- Calculates total voltage drop per line\n- Responsive grid layout with live data simulation\n\n### 🛠️ Tech Stack\n[![Node.js](https://img.shields.io/badge/Node.js-v20-green?style=flat&logo=node.js)](https://nodejs.org)\n[![Express](https://img.shields.io/badge/Express-4.19-black?style=flat&logo=express)](https://expressjs.com)\n[![Socket.io](https://img.shields.io/badge/Socket.io-4.7-brightgreen?style=flat&logo=socket.io)](https://socket.io)\nVanilla HTML/CSS/JavaScript\n\n### 🚀 Quick Start\n`bash\n# Backend (simulates physical devices)\ncd Live-Mockup/backend\nnpm install\nnpm start\n# Runs on http://localhost:3000\n\n# Frontend (open in browser)\n# Navigate to Live-Mockup/index.html\n`\n\n**API Endpoint:** `GET /api/data` | **Socket Events:** `dataUpdate`, `requestData`\n\n### 📁 Structure\n`\nLive-Mockup/\n├── index.html         # Dashboard UI\n├── script.js          # Real-time data fetching/rendering\n├── style.css          # Responsive styling\n└── backend/           # Node.js API + Socket.io server\n    ├── server.js      # Express + Socket.io server\n    ├── dataGenerator.js # Simulated device data\n    ├── package.json   # Dependencies\n    └── ...\n`\n\n## ✅ Task Manager\n\n**Task/** - Modern CRUD task management application with status workflow.\n\n### ✨ Features\n- Add new tasks\n- Status cycling: `Created` → `WIP` → `Completed`\n- Real-time list updates\n- Responsive design with smooth animations\n- XSS protection and error handling\n\n### 🛠️ Tech Stack\n[![PHP](https://img.shields.io/badge/PHP-8+-8892B0?style=flat&logo=php&logoColor=white)](https://php.net)\n[![MySQL](https://img.shields.io/badge/MySQL-8+-4479A1?style=flat&logo=mysql&logoColor=white)](https://mysql.com)\n[![JavaScript](https://img.shields.io/badge/Vanilla_JS-ES6+-F7DF1E?style=flat&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)\n\n### 🚀 Quick Start\n`bash\n# 1. Database Setup (MySQL)\n# Import Task/setup.sql to create 'task_manager' database\n\n# 2. Configure .env (Task/.env)\n# Update DB credentials\n\n# 3. Start PHP server (any directory)\nphp -S localhost:8000\n\n# 4. Open Frontend\n# Navigate to Task/index.html\n`\n\n**API:** `api/tasks.php` (GET all, POST create/update_status)\n\n### 📁 Structure\n`\nTask/\n├── index.html         # Main UI\n├── assets/            # Frontend assets\n│   ├── script.js      # Fetch API + DOM manipulation\n│   └── style.css      # Modern CSS design\n├── api/               # PHP REST API\n│   ├── config.php     # DB config (.env support)\n│   ├── db.php         # PDO connection\n│   └── tasks.php      # CRUD endpoints\n├── setup.sql          # Database schema\n└── .env               # Environment variables\n`\n\n## 🧪 Prerequisites\n\n| Project | Requirements |\n|---------|--------------|\n| Workshop Dashboard | Node.js 16+, npm |\n| Task Manager | PHP 8+, MySQL 8+, Web Server (Apache/Nginx/PHP built-in) |\n\n## 📂 Directory Structure\n`\nf:/Achiredo/\n├── README.md              # You're reading it! 🎉\n├── Live-Mockup/           # Voltage monitoring dashboard\n└── Task/                  # Task management app\n`\n\n## 🔧 Troubleshooting\n\n**Workshop Backend:**\n- Port 3000 conflict? Change `PORT` in `server.js`\n- No real-time? Check browser console, fallback uses polling\n\n**Task Manager:**\n- DB errors? Verify `.env` credentials and `setup.sql` import\n- CORS issues? PHP server handles `*` origin\n- Empty list? Check MySQL connection in `api/db.php`\n\n## 🚀 Next Steps\n- [ ] Add authentication\n- [ ] Dockerize both apps\n- [ ] Unit tests (Jest/PHPUnit)\n- [ ] Deployment (Vercel/Heroku/DigitalOcean)\n\n## 📄 License\nMIT License - Feel free to use and modify!\n\n---\n*Built with ❤️ for production-ready demos*\n
+# Achiredo - Projects Repository
+
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-informational)](https://nodejs.org/)
+[![PHP](https://img.shields.io/badge/PHP-8+-informational)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8+-informational)](https://www.mysql.com/)
+
+A repository containing two production-ready web applications:
+
+1. **Workshop Digital Twin** - Real-time voltage drop monitoring dashboard for manufacturing lines
+2. **Task Manager** - Full-stack CRUD task management application
+
+## 📁 Project Structure
+
+\`\`\`
+f:/Achiredo/
+├── README.md                 # This file
+├── Live-Mockup/              # Workshop Digital Twin Dashboard
+│   ├── index.html           # Frontend dashboard
+│   ├── script.js            # Real-time data rendering + Socket.io
+│   ├── style.css            # Responsive styling
+│   └── backend/             # Node.js API + Real-time server
+│       ├── server.js        # Express + Socket.io server
+│       ├── dataGenerator.js # Simulated workshop voltage data
+│       ├── package.json     # Dependencies (express, socket.io, cors)
+│       ├── package-lock.json
+│       └── .gitignore
+├── Task/                    # Task Manager App
+│   ├── index.html          # Frontend UI
+│   ├── .env                # DB credentials
+│   ├── setup.sql           # MySQL schema
+│   ├── api/                # PHP REST API
+│   │   ├── db.php          # PDO database connection
+│   │   ├── config.php      # DB config
+│   │   └── tasks.php       # CRUD endpoints (GET/POST)
+│   └── assets/             # Frontend assets
+│       ├── script.js       # AJAX API calls
+│       └── style.css       # Modern UI
+└── .vscode/settings.json   # Workspace settings
+\`\`\`
+
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** (v18+)
+- **PHP** (8.0+)
+- **MySQL** (8.0+)
+- **Web server** (Apache/Nginx or PHP built-in server)
+- **Git**
+
+### 1. Workshop Digital Twin (Live-Mockup)
+
+#### Backend Setup
+\`\`\`bash
+cd Live-Mockup/backend
+npm install
+npm start
+\`\`\`
+Server runs on \`http://localhost:3000\`
+
+#### Frontend
+Open \`Live-Mockup/index.html\` in browser. Auto-connects to backend via Socket.io (real-time) with polling fallback.
+
+**Features:**
+- Real-time voltage drop monitoring across 4 lines (LINE-1 to LINE-4)
+- Room-wise station data (PROPELLIA/SUBPROPELLIA stations)
+- Live total drop calculations
+- Responsive grid layout
+
+### 2. Task Manager
+
+#### Database Setup
+1. Create MySQL database:
+\`\`\`sql
+CREATE DATABASE task_manager;
+\`\`\`
+2. Run schema:
+\`\`\`bash
+mysql -u root -p task_manager < Task/setup.sql
+\`\`\`
+
+#### Environment (.env)
+Edit \`Task/.env\`:
+\`\`\`
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=task_manager
+DB_USER=root
+DB_PASSWORD=your_password
+\`\`\`
+
+#### API Server
+\`\`\`bash
+cd Task
+php -S localhost:8000 -t .
+\`\`\`
+API endpoints: \`http://localhost:8000/api/tasks.php\`
+
+#### Frontend
+Open \`Task/index.html\` in browser or serve via \`php -S\`.
+
+**Features:**
+- Add/Edit tasks
+- Status management (Created → WIP → Completed)
+- Real-time UI updates via AJAX
+- Responsive design
+- Secure PDO with prepared statements
+
+## 🛠️ Development
+
+### Workshop Backend
+- Edit \`dataGenerator.js\` for custom voltage simulation
+- \`npm start\` auto-restarts on changes (add nodemon for dev)
+
+### Task Manager
+- PHP API fully handles CORS
+- Add validation/auth in \`api/tasks.php\`
+- Extend schema in \`setup.sql\`
+
+## 📱 Screenshots
+
+**Workshop Dashboard:**
+![Workshop Dashboard](screenshots/workshop-dashboard.png)
+
+**Task Manager:**
+![Task Manager](screenshots/task-manager.png)
+
+## 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Socket.io fails | Check \`localhost:3000\` backend running |
+| CORS errors | PHP API has CORS headers enabled |
+| DB connection | Verify \`.env\` credentials & \`setup.sql\` run |
+| npm errors | \`rm -rf node_modules package-lock.json && npm install\` |
+
+## 🤝 Contributing
+
+1. Fork & clone
+2. Create feature branch (\`git checkout -b feature/amazing\`)
+3. Commit changes (\`git commit -am 'Add amazing feature'\`)
+4. Push & PR
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) (create if needed)
+
+---
+
+*Built with ❤️ for industrial & productivity applications*
+
+\`\`\`bash
+# Run both apps
+# Terminal 1: cd Live-Mockup/backend && npm start
+# Terminal 2: cd Task && php -S localhost:8000
+# Open: Live-Mockup/index.html & Task/index.html
+\`\`\`
+
