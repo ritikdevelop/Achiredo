@@ -1,0 +1,144 @@
+:root {
+    --primary-blue: #2c3e50;
+    --accent-blue: #3498db;
+    --box-bg: #ecf0f1;
+    --border-color: #bdc3c7;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.main-header {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.line-container {
+    border: 3px solid #e74c3c;
+    border-radius: 20px;
+    padding: 10px;
+    width: 380px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.line-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.rooms-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.room-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.station-chain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.station-node {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.station-box {
+    background: var(--accent-blue);
+    color: white;
+    padding: 4px 8px;
+    font-size: 10px;
+    width: 70px;
+    text-align: center;
+    border: 1px solid #2980b9;
+}
+
+.station-value {
+    font-size: 11px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* Vertical Line Connector */
+.station-node::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: black;
+    height: 15px;
+    bottom: -15px;
+    left: 35px;
+}
+
+.station-node:last-child::after {
+    display: none;
+}
+
+.final-bridge {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    height: 2px;
+    background: black;
+}
+
+.footer-stats {
+    border-top: 2px solid #3498db;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.line-label {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Task Manager</h3>
+
+      <form id="task-form" class="add-box">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div id="task-list" class="task-grid">
+        <div class="empty-state">Loading tasks...</div>
+      </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
